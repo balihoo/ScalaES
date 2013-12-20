@@ -1,0 +1,22 @@
+@(brands: List[Brand])
+
+@views.html.template("Brands") {
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Key</th>
+            </tr>
+        </thead>
+        <tbody>
+            @brands.map { b =>
+
+                <tr>
+                    <td>@b.id</td>
+                    <td>@b.key</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+}
