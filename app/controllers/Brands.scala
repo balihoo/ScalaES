@@ -10,15 +10,20 @@ import play.api.db.slick.Config.driver.simple._
 object Brands extends Controller {
   def list = DBAction { implicit rs =>
 
-    val brands = Query(models.Brands).list
+    //val brands = Query(models.Brands).list
 
-    /*
+
     import java.util.UUID
     import models.Brand
     val brands = List(Brand(UUID.randomUUID(), "Brand 1"))
-    */
+
 
     Ok(views.html.brands.list(brands))
+  }
+
+
+  def create = Action {
+    Ok(views.html.brands.create())
   }
 
 }
