@@ -1,6 +1,7 @@
-@(brands: List[Brand])
+@(brands: List[Brand])(implicit flash: play.api.mvc.Flash)
 
 @views.html.template("Brands") {
+    <a class="btn btn-success" id="add" href="@routes.Brands.create()"><i class="fa fa-plus"></i> Add Brand</a>
     <table class="table">
         <thead>
             <tr>

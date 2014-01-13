@@ -10,6 +10,9 @@ object Brands extends Table[Brand]("BRAND") {
   def id = column[UUID]("ID", O.PrimaryKey) // This is the primary key column
   def key = column[String]("KEY")
 
+  //Brand's Key must be unique
+  def idx = index("ux_key", key, unique = true)
+
   // Every table needs a * projection with the same type as the table's type parameter
   def * = id ~ key <> (Brand, Brand.unapply _)
 }
