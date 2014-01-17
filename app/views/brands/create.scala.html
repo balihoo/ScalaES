@@ -1,13 +1,12 @@
 @(brandForm: Form[Brand])(implicit flash: play.api.mvc.Flash)
 
-
-@import helper._
-@implicitFieldConstructor = @{ FieldConstructor(views.html.fieldTemplates.bootstrap3.basicForm.f) }
+@import twirl.pimpForPlay._
+@import views.html.helper._
+@implicitFieldConstructor = @{ FieldConstructor( views.html.helper.bootstrap3.basicForm.inputFieldConstructor.f ) }
 
 @views.html.template("Create a Brand") {
 
     <h1>Add a Brand</h1>
-
     @form(routes.Brands.add()) {
         @inputText(brandForm("key"), '_label -> "Brand Key", '_showConstraints -> false)
 

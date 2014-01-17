@@ -14,6 +14,7 @@
         <script src="@routes.WebJarAssets.at(WebJarAssets.locate("jquery.min.js"))" type="text/javascript"></script>
     </head>
     <body>
+
         <nav class="navbar navbar-default" role="navigation">
                 <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -43,5 +44,14 @@
         <section id="main">
             @content
         </section>
+        <div id="footer" class="bs-footer">
+            <hr/>
+            <div class="pull-right">
+                <ul class="list-unstyled">
+                    <li>Scala: @util.Properties.versionNumberString</li>
+                    <li>Java: @util.Properties.javaVersion</li>
+                </ul>
+            </div>
+        </div>
     </body>
 </html>

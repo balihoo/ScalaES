@@ -2,20 +2,27 @@ name := "scalaES"
 
 version := "1.0-SNAPSHOT"
 
+resolvers ++= Seq(
+  "Spray IO Release Repo" at "http://repo.spray.io",
+  "Sonatype Nexus Repository Manager Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+)
+
 libraryDependencies ++= Seq(
   jdbc,
-  anorm,
   cache,
   "com.typesafe.slick" %% "slick" % "1.0.1",
   "org.slf4j" % "slf4j-nop" % "1.6.4",
   "com.h2database" % "h2" % "1.3.166",
   "com.typesafe.play" %% "play-slick" % "0.5.0.8",
-  "org.mockito" % "mockito-core" % "1.9.5",
+  //Testing
+  "org.mockito" % "mockito-core" % "1.9.5" % "test",
   //WebJars
   "org.webjars" %% "webjars-play" % "2.2.0",
   "org.webjars" % "bootstrap" % "3.0.3",
   "org.webjars" % "jquery" % "2.0.3-1",
-  "org.webjars" % "font-awesome" % "4.0.3"
-)     
+  "org.webjars" % "font-awesome" % "4.0.3",
+  //Views
+  "com.balihoo" %% "play2-bootstrap3" % (play.core.PlayVersion.current + "-SNAPSHOT")
+)
 
 play.Project.playScalaSettings
