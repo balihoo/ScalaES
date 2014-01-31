@@ -1,3 +1,15 @@
 language: scala
 scala:
 - 2.10.3
+deploy:
+  provider: heroku
+  api_key:
+    secure: EaNH/tYCHEM1s7s2Wg6LV1GZW+c9TPJNlG6pZwS5tD/87Cyrg/PgsxD9YGCEGGR42Aj8f0TT6ehDoCu/+k047N3/5+F327PDvj6YwEF85a6UF1Cg2qXsB7DI+n/3Tfud04V7hvOfZEN7DN5wkNLZ+bS9+Foenw5caDvAqQhZ6wg=
+  app: scalaes
+  on:
+    repo: balihoo/ScalaES
+notifications:
+  webhooks:
+    urls:
+      - secure: "hQu+p65l5CxEyFlezWaBxRDA4yAO4fr/smXvIYZtO8HDKTwtwUNAwU/Mvimh2fKxaxVsqwBhsYu900W8lhUwPEsYRkAkZ9TJti2c/c42QodPs70252Dvcp696UJ5vPEjYxKDyqWHxevDnRQ0rYocQf7sUadM44GaXz/fVwcCE1U="
+    on_start: true
